@@ -6,7 +6,7 @@ int deterministic = 1;            // The simulation will be deterministic
 
 float lunar_gravity = 0.2f;       // Moon gravity in m/s2
 
-int disable_crash_detection = 0;  // If 1, disable crash detection
+int disable_crash_detection = 1;  // If 1, disable crash detection
 
 float pump_acceleration = -0.4f;  // Acceleration of a pump
 int pump_actuator_delay = 50;     // Delay of the pump actuator in miliseconds
