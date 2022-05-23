@@ -3,4 +3,10 @@
 
 int init_architecture();
 
+extern PREADYQUEUE tasks_queue;
+
+
+
+
+
 #endif
