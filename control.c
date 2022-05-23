@@ -84,19 +84,19 @@ void task_control_drift(void *param){
 	int lengthp=strlen(TURNON)+1;
 	int lengthb=strlen(TURNOFF)+1;
     	//Control altura
-	if((alt1)<=3.0 || (alt2)<=3.0 || (alt3)<=3.0){
+/*	if((alt1)<=3.0 || (alt2)<=3.0 || (alt3)<=3.0){
         	send(fd_PUMP_2, (char*)&lengthp, sizeof(int), 0);
         	send(fd_PUMP_2, TURNON, lengthp, 0);  
     	}
     	else{
         	send(fd_PUMP_2, (char*)&lengthb, sizeof(int), 0);
         	send(fd_PUMP_2, TURNOFF, lengthb, 0);
-    	}
-	if(speed > 0.1){
+    	}*/
+	if(speed <0.1){
         	send(fd_PUMP_1, (char*)&lengthp, sizeof(int), 0);
         	send(fd_PUMP_1, TURNON, lengthp, 0);
     	}
-    	else if(speed < 0.10){
+    	else if(speed > 0.10){
         	send(fd_PUMP_1, (char*)&lengthb, sizeof(int), 0);
         	send(fd_PUMP_1, TURNOFF, lengthb, 0);
         
@@ -136,7 +136,7 @@ int init_tasks(){
 //	PTASK task_ctr_alt=NULL;
 	PTASK task_ctr_lat=NULL;
 
-	Task_create(&task_speed, "Read speed", task_read_speed, NULL, 10, 3);
+	Task_create(&task_speed, "Read speed", task_read_speed, NULL, 5, 3);
 	Task_create(&task_alt1, "Read alt1", task_read_altura1, NULL, 10, 100);
 	Task_create(&task_alt2, "Read alt2", task_read_altura2, NULL, 10, 100);
 	Task_create(&task_alt3, "Read alt3", task_read_altura3, NULL, 10, 100);
