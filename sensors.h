@@ -7,7 +7,7 @@
 #define ALTITUDE_3 20012
 #define LEFT_SENSOR 20015
 #define RIGHT_SENSOR 20016
-#define PIPE_NAME "Speedpipe"
+#define PIPE_NAME "speedpipe"
 
 
 
