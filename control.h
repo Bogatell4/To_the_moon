@@ -15,6 +15,9 @@ void task_read_altura2(void *param);
 void task_read_altura3(void *param);
 void task_read_right(void *param);
 void task_read_left(void *param);
+
+//void task_control_drift(void *param); --Fa falta??
+
 int Readyqueue_enqueue(PREADYQUEUE queue, PTASK task);
 
 
